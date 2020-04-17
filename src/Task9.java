@@ -11,7 +11,7 @@ public class Task9 {
             System.out.print("Введите элемент массива " + (i+1) + ":");
             myArr[i] = sc.nextInt();
         }
-        System.out.println("Значения элементов массива, умноженных на 2:");
+        System.out.println("Значения элементов массива, умноженные на 2:");
 
         for(int i = 0; i < myArr.length; i++){
             System.out.println("Элемент массива " + (i+1) + ": " + myArr[i]*2);
