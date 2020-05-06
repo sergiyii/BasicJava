@@ -19,18 +19,22 @@ public class Task18 {
         }
 
         //Замена строк в файле
-        System.out.println("Введите отредактированные строки: ");
-        str = null;
-        try (FileWriter writer = new FileWriter(fileName)) {
-            while(ln > 0){
-                System.out.print(": ");
-                str = sc.nextLine();
-                str = str + "\r\n";
-                writer.write(str);
-                ln--;
+        if (ln > 0) {
+            System.out.println("Введите отредактированные строки: ");
+            str = null;
+            try (FileWriter writer = new FileWriter(fileName)) {
+                while (ln > 0) {
+                    System.out.print(": ");
+                    str = sc.nextLine();
+                    str = str + "\r\n";
+                    writer.write(str);
+                    ln--;
+                }
+            } catch (IOException ex) {
+                System.out.println("Ошибка ввода-вывода: " + ex);
             }
-        } catch (IOException ex) {
-            System.out.println("Ошибка ввода-вывода: " + ex);
+        } else {
+            System.out.println("Файл не содержит строк.");
         }
     }
 }
